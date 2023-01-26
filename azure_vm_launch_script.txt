@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Set the resource group and region for the first server
+resource_group_1="myresourcegroup"
+region_1="eastasia"
+
+# Set the resource group and region for the second server
+resource_group_2="myResourceGroup"
+region_2="eastus"
+
+# Create the first server
+az vm create \
+    --resource-group $resource_group_1 \
+    --name "myServer1" \
+    --image UbuntuLTS \
+    --location $region_1 \
+    --admin-username "myadmin" \
+    --admin-password "myPassword123!"
+
+# Create the second server
+az vm create \
+    --resource-group $resource_group_2 \
+    --name "myServer2" \
+    --image UbuntuLTS \
+    --location $region_2 \
+    --admin-username "myadmin" \
+    --admin-password "myPassword123!"
